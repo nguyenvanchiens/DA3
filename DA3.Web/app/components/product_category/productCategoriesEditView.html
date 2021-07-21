@@ -1,0 +1,78 @@
+﻿<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Collapsed Sidebar</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">ProductCategory</a></li>
+                    <li class="breadcrumb-item"><a href="#">Add ProductCategory</a></li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh Mục</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <form ng-submit="UpdateProductCategory()" role="form" name="frmeditProductCategory">
+
+                            <div class="form-group">
+                                <label for="inputAddress">Name</label>
+                                <input type="text" class="form-control" id="inputAddress" ng-change="getAlias()" ng-model="productCategory.Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Alias</label>
+                                <input type="text" class="form-control" ng-model="productCategory.Alias" id="inputAddress2">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Icon</label>
+                                <input type="text" class="form-control" id="inputAddress2" ng-model="productCategory.Icon">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Description</label>
+                                <input type="text" class="form-control" id="inputAddress2" ng-model="productCategory.Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">DisplayOrder</label>
+                                <input type="text" class="form-control" id="inputAddress2" ng-model="productCategory.DisplayOrder">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">MetaKeywords</label>
+                                <input type="text" class="form-control" id="inputAddress2" ng-model="productCategory.MetaKeywords">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">MetaDescriptions</label>
+                                <input type="text" class="form-control" id="inputAddress2" ng-model="productCategory.MetaDescriptions">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Status:</label>
+                                <input type="checkbox" ng-checked="productCategory.Status" id="inputAddress2">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

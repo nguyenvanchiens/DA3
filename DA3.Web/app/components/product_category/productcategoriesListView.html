@@ -1,0 +1,95 @@
+﻿
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Collapsed Sidebar</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Product Category</a></li>                  
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh Mục</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                   
+                    <div class="card-body">
+                        <div class="row mb-3" style="margin-right:0;display:flex;justify-content: space-between">
+                            <div class="input-group col-lg-3">
+                                <a ui-sref="productCategory-add" class="btn btn-primary" title="Add ProductCategory"><i class="fas fa-plus-circle"></i></a>
+                                <button ng-click="DeleteMultiple()" id="btnDelete" class="btn btn-primary ml-2" title="DeleteMuti"><i class="far fa-trash-alt"></i></button>
+                            </div>  
+                            <div class="input-group col-lg-3">
+                                <input type="text" ng-model="keyword" class="form-control" placeholder="Từ Khóa Tìm Kiếm" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-danger" type="button" ng-click="search()">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <table class="table table-bordered table-responsive-lg table-responsive-sm table-responsive-md table-responsive-xl">
+                            <thead class="thead-dark">
+                                <tr class="text-center">
+                                    <th><input type="checkbox"  name="all" ng-click="SelectAll()"/></th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>CreatedDate</th>
+                                    <th>DisplayOrder</th>
+                                    <th>Status</th>
+                                    <th>Manipulation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center" ng-repeat="item in productCategories">
+                                    <td><input type="checkbox" name="all" ng-model="item.checked" /></td>
+                                    <td>{{item.ID}}</td>
+                                    <td>{{item.Name}}</td>
+                                    <td>{{item.CreatedDate | date:'dd/MM/yyyy'}}</td>
+                                    <td>{{item.DisplayOrder}}</td>
+                                    <td><span ng-class="{'text-red':item.Status==false,'text-blue':item.Status==true}">{{item.Status | statusFilter}}</span></td>
+                                    <td>                                      
+                                        <button type="button" class="btn btn-primary" ui-sref="productCategory-edit({id:item.ID})"><i class="fas fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger" ng-click="deleteProductCategory(item.ID)"><i class="far fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="7"><span class="pull-right">Trang : {{page+1}} - Tổng số bản ghi : {{totalCount}}</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>                  
+                    <!-- /.card-body -->
+                    <div class="box-footer ml-3">
+                        <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getProductCategory(page)"></pager-directive>
+                    </div><!-- /.box-footer-->
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>

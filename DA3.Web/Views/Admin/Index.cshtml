@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fasfood Admin</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Assets/Admin/libs/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Assets/Admin/css/adminlte.min.css">
+    <link href="~/Assets/Admin/libs/angular-loading-bar/build/loading-bar.css" rel="stylesheet" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="~/Assets/Admin/libs/toastr/toastr.css" rel="stylesheet" />
+</head>
+<body class="hold-transition sidebar-mini sidebar-collapse" ng-app="fasfood" ng-controller="rootCtrl">
+
+    <div ui-view></div>
+
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Assets/Admin/libs/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Assets/Admin/js/adminlte.min.js"></script>
+    <!--begin embed angularjs-->
+    <script src="~/Assets/Admin/libs/AngularJS.js"></script>
+    <script src="~/Assets/Admin/libs/angular-ui-router.js"></script>
+    <script src="~/app/shared/modules/fasfood.common.js"></script>
+    <script src="~/Assets/Admin/libs/toastr/toastr.js"></script>
+    <script src="~/Assets/Admin/libs/ckeditor/ckeditor.js"></script>
+    <script src="~/Assets/Admin/libs/ckfinder/ckfinder.js"></script>
+    <script src="~/Assets/Admin/libs/bootbox/bootbox.js"></script>
+    <script src="~/Assets/Admin/libs/ng-ckeditor/ng-ckeditor.js"></script>
+    <script src="~/Assets/Admin/libs/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="~/Assets/Admin/libs/angular-loading-bar/build/loading-bar.js"></script>
+
+
+
+    <script src="~/Assets/Admin/libs/ngBootbox/ngBootbox.js"></script>
+    <script src="~/app/shared/directives/pageDirective.js"></script>
+    <script src="~/app/shared/services/notificationService.js"></script>
+    <script src="~/app/shared/Filter/statusFilter.js"></script>
+
+
+    <script src="~/app/shared/services/authData.js"></script>
+    <script src="~/app/shared/services/authenticationService.js"></script>
+
+    <script src="~/app/shared/services/appService.js"></script>
+    <script src="~/app/shared/services/commonService.js"></script>
+    <script src="~/app/components/products/products.module.js"></script>
+    <script src="~/app/components/product_category/productCategories.module.js"></script>
+    <script src="~/app/components/newcategory/newcategory.module.js"></script>
+    <script src="~/app/components/news/news.module.js"></script>
+
+    <script src="~/app/shared/services/loginService.js"></script>
+
+    <script src="~/app/app.js"></script>
+    <script src="~/app/components/home/rootCtrl.js"></script>
+    <script src="~/app/components/products/productAddCtrl.js"></script>
+    <script src="~/app/components/products/productListCtrl.js"></script>
+    <script src="~/app/components/products/productEditCtrl.js"></script>
+
+
+    <script src="~/app/components/product_category/productcategoryListCtrl.js"></script>
+    <script src="~/app/components/product_category/productCategoriesAddCtrl.js"></script>
+    <script src="~/app/components/product_category/productCategoriesEditCtrl.js"></script>
+    <script src="~/app/components/home/homeCtrl.js"></script>
+
+    <script src="~/app/components/newcategory/newcategoryListCtrl.js"></script>
+    <script src="~/app/components/newcategory/newcategoryEditCtrl.js"></script>
+    <script src="~/app/components/newcategory/newcategoryAddCtrl.js"></script>
+
+
+    <script src="~/app/components/news/newListCtrl.js"></script>
+
+
+    <script src="~/app/components/login/LoginCtrl.js"></script>
+</body>
+</html>

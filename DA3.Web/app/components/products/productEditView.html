@@ -1,0 +1,112 @@
+﻿<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Collapsed Sidebar</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Product</a></li>
+                    <li class="breadcrumb-item"><a href="#">Edit Product</a></li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh Mục</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <form ng-submit="EditProduct()" role="form" name="frmeditProduct">
+
+                            <div class="form-group">
+                                <label for="inputAddress">Name</label>
+                                <input type="text" class="form-control" required ng-change="getAlias()" id="inputAddress" ng-model="product.Name">
+                                <span ng-show="frmeditProduct.Name.$invalid" class="text-danger">Nhập tên loại sản phẩm</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAlias">Alias</label>
+                                <input type="text" class="form-control" id="inputAlias" ng-model="product.Alias">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputImage">Image</label>
+                                <input type="text" class="form-control" id="inputImage" ng-model="product.Image">
+                                <button type="button" class="btn btn-info" ng-click="chooseImage()">Chọn Ảnh</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputImage">MoreImage</label>
+                                <ul class="list-inline" style="display:flex">
+                                    <li ng-repeat="img in moreImage"><img ng-src="{{img}}" style="width:100px" /></li>
+                                </ul>
+                                <button type="button" class="btn btn-info" ng-click="choosemoreImage()">Chọn Ảnh</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPrice">Price</label>
+                                <input type="text" class="form-control" id="inputPrice" ng-model="product.Price">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPromotion">Promotion</label>
+                                <input type="text" class="form-control" id="inputPromotion" ng-model="product.Promotion">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputQuantity">Quantity</label>
+                                <input type="text" class="form-control" id="inputQuantity" ng-model="product.Quantity">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputWarranty">Warranty</label>
+                                <input type="text" class="form-control" id="inputWarranty" ng-model="product.Warranty">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Description</label>
+                                <input type="text" class="form-control" id="inputDescription" ng-model="product.Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputContent">Content</label>
+                                <input type="text" class="form-control" id="inputContent" ng-model="product.Content">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputProductCategoryID">ProductCategoryID</label>
+                                <select name="ProductCategoryID" ng-model="product.ProductCategoryID" class="form-control" ng-options="option.ID as option.Name for option in ProductCategory">
+                                </select>
+                                <input hidden name="ProductCategoryID" ng-model="product.ProductCategoryID" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMetaKeywords">MetaKeywords</label>
+                                <input type="text" class="form-control" id="inputMetaKeywords" ng-model="product.MetaKeywords">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMetaDescriptions">MetaDescriptions</label>
+                                <input type="text" class="form-control" id="inputMetaDescriptions" ng-model="product.MetaDescriptions">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputStatus">Status:</label>
+                                <input type="checkbox" ng-checked="product.Status" id="inputStatus">
+                            </div>
+
+                            <button type="submit" ng-disabled="frmeditProduct.$invalid" class="btn btn-primary">Save</button>
+                            <button type="button" ui-sref="products" class="btn btn-primary">Back</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,76 @@
+﻿<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Collapsed Sidebar</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Newcategory</a></li>
+                    <li class="breadcrumb-item"><a href="#">Edit Newcategory</a></li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh Mục</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <form ng-submit="EditeNewCategory()" role="form" name="frmeditnewCategory">
+
+                            <div class="form-group">
+                                <label for="inputAddress">Name</label>
+                                <input type="text" class="form-control" required ng-change="getAlias()" id="inputAddress" ng-model="newCategory.Name">
+                              
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Alias</label>
+                                <input type="text" class="form-control" ng-model="newCategory.MetaTitle" id="inputAddress2">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">DisplayOrder</label>
+                                <input type="text" class="form-control" id="inputAddress2" ng-model="newCategory.DisplayOrder">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">SeoTitle</label>
+                                <input class="form-control" id="inputAddress2" ng-model="newCategory.SeoTitle">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress2">MetaKeywords</label>
+                                <input type="text" class="form-control" id="inputAddress2" ng-model="newCategory.MetaKeywords">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">MetaDescriptions</label>
+                                <input type="text" class="form-control" id="inputAddress2" ng-model="newCategory.MetaDescriptions">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Status:</label>
+                                <input type="checkbox" ng-checked="newCategory.Status" id="inputAddress2">
+                            </div>
+
+                            <button type="submit" ng-disabled="frmeditnewCategory.$invalid" class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
